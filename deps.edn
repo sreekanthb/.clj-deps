@@ -1,0 +1,13 @@
+;; deps.edn - cross-project configuration
+{:mvn/repos {
+             ;; Clojure snapshots
+             "sonatype-oss-public"
+             {:url "https://oss.sonatype.org/content/groups/public/"}}
+ :paths []
+
+ ;; Aliases
+ :aliases
+ {
+  :1.12 {:override-deps {org.clojure/clojure {:mvn/version "1.12.0-alpha1"}}}
+  :master {:override-deps {org.clojure/clojure {:mvn/version "1.12.0-master-SNAPSHOT"}}}}
+ }
