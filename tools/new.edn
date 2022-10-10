@@ -1,11 +1,3 @@
-;;    # Help
-;;    clojure -A:deps -Tnew help/doc
-
-;;    # Create new application
-;;    clojure -Tnew app :name myusername/mynewapp
-
-;;    # Create new libary
-;;    clojure -Tnew lib :name myusername/mycoollib
 {:lib io.github.seancorfield/deps-new,
  :coord
  {:git/tag "v0.4.13",
