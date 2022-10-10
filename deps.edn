@@ -1,13 +1,19 @@
-;; deps.edn - cross-project configuration
-{:mvn/repos {
-             ;; Clojure snapshots
+;; deps.edn - Clojure cross-project configuration
+{:mvn/repos {;; Clojure snapshots
              "sonatype-oss-public"
              {:url "https://oss.sonatype.org/content/groups/public/"}}
- :paths []
+
+ :paths     []
 
  ;; Aliases
  :aliases
  {
-  :1.12 {:override-deps {org.clojure/clojure {:mvn/version "1.12.0-alpha1"}}}
+
+  :lint {:replace-deps {io.github.clj-kondo/clj-kondo {:git/tag "v2022.10.05",
+                                                       :git/sha "ac72504"}}
+         :main-opts    ["-m" "clj-kondo.main"]}
+
+  ;; Clojure versions as alias
+  :1.12   {:override-deps {org.clojure/clojure {:mvn/version "1.12.0-alpha1"}}}
   :master {:override-deps {org.clojure/clojure {:mvn/version "1.12.0-master-SNAPSHOT"}}}}
  }
